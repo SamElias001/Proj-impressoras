@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP: Projeto Disciplinar</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div class="bg">
+    <div class="container">
+      <div class="login-container">
+        <label for="text">Email</label>
+        <input type="email" name="email" id="emailLogin" class="input" required>
+
+        <label for="text">Senha</label>
+        <input type="password" name="senha" id="senhaLogin" class="input" required>
+      </div>
+
+      <div class="join-container">
+        <button id="login-btn" onclick="verificarLogin()">
+          Entrar
+        </button>
+
+        <button id="cadastro-btn" onclick="window.location.href='./abas/cadastro.html'">
+          Cadastrar-se
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="glass">
+        <div class="slideGlass">a1</div>
+        <div class="slideGlass">a2</div>
+        <div class="slideGlass">a3</div>
+      </div>
+      <div>
+        <button class="btn left" onclick="moveSlide(-1)"><</button>
+        <button class="btn right" onclick="moveSlide(1)">></button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./src/script.js"></script>
+</body>

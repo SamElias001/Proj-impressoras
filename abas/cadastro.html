@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP: Projeto Disciplinar</title>
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+    <div class="bg">
+        <div class="container">
+            <div class="login-container">
+                <label for="text">Nome</label>
+                <input type="text" name="newName" id="newName" class="input" required>
+
+                <label for="text">Email</label>
+                <input type="email" name="newEmail" id="newEmail" class="input" required>
+
+                <label for="text">Data de nascimento</label>
+                <input type="number" name="dateB" id="dateB" class="input" required>
+
+                <label for="text">Senha</label>
+                <input type="password" name="newPassword" id="newPassword" class="input" required>
+
+                <label for="text">Confirme a senha</label>
+                <input type="password" name="passConfirm" id="passConfirm" class="input" required>
+            </div>
+
+            <div class="join-container">
+                <button id="newCadastro-btn" onclick="newUser()">
+                    Fazer cadastro
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
