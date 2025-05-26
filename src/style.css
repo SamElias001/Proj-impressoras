@@ -1,8 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
+{
+margin: 0;
+padding: 0;,
 }
-  
+
 .bg {
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@
   width: 100vw;
   height: 100vh;
 }
-  
+
 .container {
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@
   overflow: hidden;
   position: relative;
 }
-  
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -42,14 +42,14 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-  
+
 .join-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
 }
-  
+
 .join-container button {
   padding: 5px;
   border: 2px solid black;
@@ -81,7 +81,8 @@
   color: white;
   background-color: transparent;
   border: none;
-  padding: 10px;cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
   font-size: 20px;
 }
 
@@ -91,4 +92,42 @@
 
 .right {
   right: 0;
+}
+
+/* Chat IA */
+
+#container-chat {
+  width: 500px;
+}
+
+.chat-container {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.chat-input input, button {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 4px;
+  background-color: black;
+  color: lightgray;
+}
+
+.chat-input {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.chat-input input {
+  width: 80%;
+}
+
+.chat-input button {
+  width: 15%;
 }
