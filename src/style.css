@@ -1,133 +1,92 @@
 * {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: gray;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+.tray {
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    height: 98vh;
+    width: 10%;
+    align-items: center;
+    padding-top: 2vh;
+    border-right: 2px solid black;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 1vh;
+}
+
+.profile-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image: url("./imgs/demo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.profile-name {
+
+}
+
+.list {
+    margin-top: 1vh;
+}
+
+.op-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.op-itens i {
+    margin-top: 2vh;
+    font-size: 3vh;
+    cursor: pointer;
+}
+
+.op-itens a {
+    text-decoration: none;
+    color: black;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.content table {
+    border: 2px solid black;
+    background-color: deepskyblue;
+    width: 100%;
+}
+
+#estoque {
+    justify-content: center;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border: 3px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 15px;
-  background-color: rgb(91, 91, 91);
-  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  overflow: hidden;
-  position: relative;
-}
-
-.login-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: 1rem;
-}
-
-.login-container label {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.join-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1rem;
-}
-
-.join-container button {
-  padding: 5px;
-  border: 2px solid black;
-}
-
-.input {
-  border: 2px solid black;
-  border-radius: 6px;
-}
-
-#glass {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.slideGlass {
-  min-width: 300px;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  border-right: 1px solid transparent;
-}
-
-.btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  background-color: transparent;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.left {
-  left: 0;
-}
-
-.right {
-  right: 0;
-}
-
-/* Chat IA */
-
-#container-chat {
-  width: 500px;
-}
-
-.chat-container {
-  height: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  padding: 10px;
-  justify-content: space-between;
-}
-
-.chat-input input, button {
-  border: 1px solid gray;
-  border-radius: 8px;
-  padding: 4px;
-  background-color: black;
-  color: lightgray;
-}
-
-.chat-input {
-  display: flex;
-  gap: 5px;
-  justify-content: space-between;
-}
-
-.chat-input input {
-  width: 80%;
-}
-
-.chat-input button {
-  width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 30vw;
+    width: 50%;
+    background-color: darkgray;
 }
