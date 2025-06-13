@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edição</title>
 
     <link rel="stylesheet" href="../style.css">
 
@@ -44,9 +44,13 @@
 
     <div class="content" id="estoque">
         <div class="container">
-            <?php
-                
-            ?>
+            <ul class="op-edit">
+                <li onclick="">Impressoras</li>
+                <li onclick="">Estoque</li>
+            </ul>
+
+            <form action=""></form>
+
         </div>
     </div>
 

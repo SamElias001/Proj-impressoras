@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Impressoras</title>
 
     <link rel="stylesheet" href="./src/style.css">
 
@@ -13,7 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body style="background-color: darkcyan; display: flex;">
+<body style="background-color: gray; display: flex;">
     <div class="tray">
         <div class="profile">
             <div class="profile-img" onclick=""></div>
