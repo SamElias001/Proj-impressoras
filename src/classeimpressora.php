@@ -213,15 +213,50 @@ class Impressoras
 
 class Pecas {
     private $id_peca;
-    private $nome;
-    private $marca;
-    private $descricao;
+    private $nome_peca;
+    private $marca_peca;
+    private $descricao_peca;
 
+
+    // GETs
+    public function getIdPeca()
+    {
+        return $this->id_peca;
+    }
+    public function getNomePeca(){
+        return $this->nome_peca;
+    }
+    public function getMarcaPeca(){
+        return $this->marca_peca;
+    }
+    public function getDescricaoPeca(){
+        return $this->descricao_peca;
+    }
+
+
+    //SETs
+    public function setIdPeca($id_peca){
+        $this->id_peca = $id_peca;
+    }
+
+    public function setNomePeca($nome_peca){
+        $this->nome_peca = $nome_peca;
+    }
+
+    public function setMarcaPeca($marca_peca){
+        $this->marca_peca = $marca_peca;
+    }
+
+    public function setDescricaoPeca($discricao_peca){
+        $this->discricao_peca = $discricao_peca;
+    }
 }
 
 class Estoque {
     private $id_estoque;
     private $id_peca;
     private $quantidade;
+
+    
 }
 ?>
