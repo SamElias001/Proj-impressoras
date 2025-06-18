@@ -247,8 +247,8 @@ class Pecas {
         $this->marca_peca = $marca_peca;
     }
 
-    public function setDescricaoPeca($discricao_peca){
-        $this->discricao_peca = $discricao_peca;
+    public function setDescricaoPeca($descricao_peca){
+        $this->descricao_peca = $descricao_peca;
     }
 }
 
