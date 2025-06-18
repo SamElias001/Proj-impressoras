@@ -13,7 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body style="background-color: darkcyan; display: flex;">
+<body style="background-color: gray; display: flex;">
     <div class="tray">
         <div class="profile">
             <div class="profile-img" onclick=""></div>
