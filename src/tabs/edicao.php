@@ -53,7 +53,7 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="serial">Número de Série:</label>
-                        <input type="text" id="serial" name="serial" required>
+                        <input type="text" id="serial" name="serial" style="text-transform: uppercase;" required>
 
                         <label for="setor">Setor:</label>
                         <input type="text" id="setor" name="setor" required>

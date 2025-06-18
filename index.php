@@ -61,7 +61,34 @@
                 
             </tbody>
             <?php
+            require("./src/classeimpressora.php");
 
+            $impressora = new Impressoras();
+            $listaDeimpressoras = $impressora->listarImpressoras();
+
+            foreach ($listaDeimpressoras as $registro) {
+                $id_imp = $registro['id_imp'];
+                $numero_de_serie = $registro['numero_de_serie'];
+                $setor = $registro['setor'];
+                $marca = $registro['marca'];
+                $ultima_manutencao = $registro['ultima_manutencao'];
+                $problema = $registro['problema'];
+                $peca_utilizada = $registro['peca_utilizada'];
+                $status_de_conclusao = $registro['status_de_conclusao'];
+                $rede = $registro['rede'];
+
+                echo "<tr>";
+                echo "<td>$id_imp</td>";
+                echo "<td>$numero_de_serie</td>";
+                echo "<td>$setor</td>";
+                echo "<td>$marca</td>";
+                echo "<td>$ultima_manutencao</td>";
+                echo "<td>$problema</td>";
+                echo "<td>$peca_utilizada</td>";
+                echo "<td>$status_de_conclusao</td>";
+                echo "<td>$rede</td>";
+                echo "</tr>";
+            }
             ?>
         </table> 
     </div>

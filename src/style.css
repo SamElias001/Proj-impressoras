@@ -123,6 +123,7 @@
     color: black;
     font-weight: bold;
     cursor: pointer;
+    height: 5vh;
 }
 
 .content-edit form {
@@ -140,4 +141,10 @@
     height: 100%;
     width: 100%;
     gap: 5px;
+}
+
+.form-group input, select {
+    border-radius: 6px;
+    border: 2px solid black;
+    padding-left: 0.3vw;
 }

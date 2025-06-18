@@ -59,9 +59,9 @@ class Impressoras
     {
         $this->id_imp = $id_imp;
     }
-    public function setNumSerie($num_serie)
+    public function setNumSerie($numero_de_serie)
     {
-        $this->numero_de_serie = $num_serie;
+        $this->numero_de_serie = $numero_de_serie;
     }
     public function setSetor($setor)
     {
