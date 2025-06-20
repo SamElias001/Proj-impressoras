@@ -22,8 +22,8 @@
 
         <ul class="list">
             <li class="op-itens">
-                <i class="fa-solid fa-print" onclick="window.location.href='../../index.php'"></i>
-                <a href="../../index.php">
+                <i class="fa-solid fa-print" onclick="window.location.href='./impressoras.php'"></i>
+                <a href="./impressoras.php">
                     Impressoras
                 </a>
             </li>
@@ -34,9 +34,9 @@
                 </a>
             </li>
             <li class="op-itens">
-                <i class="fa-solid fa-file-pen" onclick="window.location.href='./edicao.php'"></i>
-                <a href="./edicao.php">
-                    Edição
+                <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
+                <a href="./gerenciamento.php">
+                    Gerenciamento
                 </a>
             </li>
         </ul>
@@ -56,11 +56,12 @@
                 
             </tbody>
             <?php
+            require("../classeimpressora.php");
 
             ?>
         </table> 
     </div>
 
-    <script src="./src/script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

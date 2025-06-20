@@ -22,77 +22,51 @@
 
         <ul class="list">
             <li class="op-itens">
-                <i class="fa-solid fa-print" onclick="showContent('impressoras')"></i>
-                <a href="#impressoras" onclick="showContent('impressoras')">
+                <i class="fa-solid fa-print" onclick="window.location.href='./src/tabs/impressoras.php'"></i>
+                <a href="./src/tabs/impressoras.php">
                     Impressoras
                 </a>
             </li>
             <li class="op-itens">
                 <i class="fa-solid fa-boxes-stacked" onclick="window.location.href='./src/tabs/estoque.php'"></i>
-                <a href="#estoque" onclick="showContent('estoque')">
+                <a href="./src/tabs/estoque.php">
                     Estoque
                 </a>
             </li>
             <li class="op-itens">
-                <i class="fa-solid fa-file-pen" onclick="window.location.href='./src/tabs/edicao.php'"></i>
-                <a href="#edicao" onclick="showContent('edicao')">
-                    Edição
+                <i class="fa-solid fa-file-pen" onclick="window.location.href='./src/tabs/gerenciamento.php'"></i>
+                <a href="./src/tabs/gerenciamento.php">
+                    Gerenciamento
                 </a>
             </li>
         </ul>
     </div>
 
-    <div class="content">
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Número de Série</th>
-                    <th>Setor</th>
-                    <th>Marca</th>
-                    <th>Última Manutenção</th>
-                    <th>Serviço</th>
-                    <th>Peça</th>
-                    <th>Status</th>
-                    <th>Rede</th> 
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-            <?php
-            require("./src/classeimpressora.php");
-
-            $impressora = new Impressoras();
-            $listaDeimpressoras = $impressora->listarImpressoras();
-
-            foreach ($listaDeimpressoras as $registro) {
-                $id_imp = $registro['id_imp'];
-                $numero_de_serie = $registro['numero_de_serie'];
-                $setor = $registro['setor'];
-                $marca = $registro['marca'];
-                $ultima_manutencao = $registro['ultima_manutencao'];
-                $problema = $registro['problema'];
-                $peca_utilizada = $registro['peca_utilizada'];
-                $status_de_conclusao = $registro['status_de_conclusao'];
-                $rede = $registro['rede'];
-
-                echo "<tr>";
-                echo "<td>$id_imp</td>";
-                echo "<td>$numero_de_serie</td>";
-                echo "<td>$setor</td>";
-                echo "<td>$marca</td>";
-                echo "<td>$ultima_manutencao</td>";
-                echo "<td>$problema</td>";
-                echo "<td>$peca_utilizada</td>";
-                echo "<td>$status_de_conclusao</td>";
-                echo "<td>$rede</td>";
-                echo "</tr>";
-            }
-            ?>
-        </table> 
+    <div class="content" style="align-items: center; justify-content: center;">
+        <div class="container container-index">
+            <ul class="list" style="flex-direction: row;">
+                <li class="op-itens">
+                    <i class="fa-solid fa-print" onclick="window.location.href='./impressoras.php'"></i>
+                    <a href="./impressoras.php">
+                        Impressoras
+                    </a>
+                </li>
+                <li class="op-itens">
+                    <i class="fa-solid fa-boxes-stacked" onclick="window.location.href='./src/tabs/estoque.php'"></i>
+                    <a href="./src/tabs/estoque.php">
+                        Estoque
+                    </a>
+                </li>
+                <li class="op-itens">
+                    <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
+                    <a href="./gerenciamento.php">
+                        Gerenciamento
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="./src/script.js"></script>
 </body>
-</html>
+</html

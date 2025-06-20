@@ -1,8 +1,11 @@
+-- Apenas estrutura do banco de dados para o sistema de impressoras
+-- Banco de dados em Xampp
+
 CREATE TABLE impressoras (
     id_imp INT AUTO_INCREMENT PRIMARY KEY,
     numero_de_serie VARCHAR(50) NOT NULL UNIQUE,
     setor VARCHAR(50) NOT NULL,
-    marca VARCHAR(50) NOT NULL,
+    marca ENUM('Samsung', 'HP', 'Epson') NOT NULL,
     ultima_manutencao DATE,
     problema TEXT,
     peca_utilizada VARCHAR(50),
@@ -24,6 +27,10 @@ CREATE TABLE estoque (
     FOREIGN KEY (id_peca) REFERENCES pecas(id_peca)
 );
 
-
+-- Preset
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
-VALUES ('Z', 'Backup TI', 'Samsung', '2025-06-16', 'Troca de Toner', 'Toner', 'Feito', 'Sim');
+VALUES ('ZDEJB07M646436P', 'Elz_M - Enferm', 'Samsung', '2025-06-04', 'Troca de Toner', 'Toner', 'Feito', 'Sim');
+
+-- Alterar banco antigo
+ALTER TABLE impressoras
+MODIFY COLUMN marca ENUM('Samsung', 'HP', 'Epson') NOT NULL;

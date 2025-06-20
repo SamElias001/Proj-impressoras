@@ -100,10 +100,18 @@
     background-color: darkgray;
 }
 
-.container-edicao {
+.container-gerenciamento {
     display: flex;
     flex-direction: column;
     justify-content: start;
+}
+
+.container-index {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 1rem 2rem 2rem 2rem;
 }
 
 .op-edit {
