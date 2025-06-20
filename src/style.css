@@ -76,6 +76,10 @@
     width: 100%;
 }
 
+.content table thead {
+    background-color: rgb(148, 148, 148);
+}
+
 #edicao {
     justify-content: center;
 }

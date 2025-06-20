@@ -6,7 +6,7 @@ CREATE TABLE impressoras (
     ultima_manutencao DATE,
     problema TEXT,
     peca_utilizada VARCHAR(50),
-    status_de_conclusao ENUM('Pendente', 'Em andamento', 'Concluído') NOT NULL DEFAULT 'Pendente',
+    status_de_conclusao ENUM('Pendente', 'Em andamento', 'Feito') NOT NULL DEFAULT 'Pendente',
     rede ENUM('Sim', 'Não') NOT NULL
 );
 
