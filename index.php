@@ -44,29 +44,27 @@
 
     <div class="content" style="align-items: center; justify-content: center;">
         <div class="container container-index">
-            <ul class="list" style="flex-direction: row;">
-                <li class="op-itens">
-                    <i class="fa-solid fa-print" onclick="window.location.href='./impressoras.php'"></i>
-                    <a href="./impressoras.php">
+            <ul class="list list-index">
+                <li class="op-itens op-index">
+                    <i class="fa-solid fa-print" onclick="window.location.href='./src/tabs/impressoras.php'"></i>
+                    <a href="./src/tabs/impressoras.php">
                         Impressoras
                     </a>
                 </li>
-                <li class="op-itens">
+                <li class="op-itens op-index">
                     <i class="fa-solid fa-boxes-stacked" onclick="window.location.href='./src/tabs/estoque.php'"></i>
                     <a href="./src/tabs/estoque.php">
                         Estoque
                     </a>
                 </li>
-                <li class="op-itens">
-                    <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
-                    <a href="./gerenciamento.php">
+                <li class="op-itens op-index">
+                    <i class="fa-solid fa-file-pen" onclick="window.location.href='./src/tabs/gerenciamento.php'"></i>
+                    <a href="./src/tabs/gerenciamento.php">
                         Gerenciamento
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-
-    <script src="./src/script.js"></script>
 </body>
 </html
