@@ -23,3 +23,7 @@ CREATE TABLE estoque (
     quantidade INT NOT NULL DEFAULT 0,
     FOREIGN KEY (id_peca) REFERENCES pecas(id_peca)
 );
+
+
+INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
+VALUES ('Z', 'Backup TI', 'Samsung', '2025-06-16', 'Troca de Toner', 'Toner', 'Feito', 'Sim');
