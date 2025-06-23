@@ -7,7 +7,7 @@ CREATE TABLE impressoras (
     setor VARCHAR(50) NOT NULL,
     marca ENUM('Samsung', 'HP', 'Epson') NOT NULL,
     ultima_manutencao DATE NOT NULL DEFAULT '2025-06-23',
-    problema TEXT NOT NULL DEFAULT 'Nenhuma',
+    problema TEXT NOT NULL DEFAULT 'Nenhum',
     peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma',
     status_de_conclusao ENUM('Pendente', 'Em andamento', 'Feito') NOT NULL DEFAULT 'Pendente',
     rede ENUM('Sim', 'Não') NOT NULL
@@ -40,7 +40,7 @@ MODIFY COLUMN marca ENUM('Samsung', 'HP', 'Epson') NOT NULL;
 
 ALTER TABLE impressoras
 MODIFY COLUMN ultima_manutencao DATE NOT NULL DEFAULT '2025-06-23',
-MODIFY COLUMN problema VARCHAR(255) NOT NULL DEFAULT 'Nenhuma',
+MODIFY COLUMN problema VARCHAR(255) NOT NULL DEFAULT 'Nenhum',
 MODIFY COLUMN peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma';
 
 ALTER TABLE pecas
