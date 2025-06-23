@@ -17,7 +17,6 @@
     <div class="tray">
         <div class="profile">
             <div class="profile-img" onclick=""></div>
-            <div class="profile-name">Convidado</div>
         </div>
 
         <ul class="list">

@@ -16,22 +16,21 @@
 <body style="background-color: gray; display: flex;">
     <div class="profile">
         <div class="profile-img" onclick="toggleTray()"></div>
-        <div class="profile-name">Convidado</div>
     </div>
 
     <div class="tray" id="trayMenu">
         <ul class="list">
             <li class="op-itens">
-                <i class="fa-solid fa-print" onclick="window.location.href='./impressoras.php'"></i>
-                <a href="./impressoras.php">Impressoras</a>
+                <i class="fa-solid fa-print"></i>
+                <a>Impressoras</a>
             </li>
             <li class="op-itens">
                 <i class="fa-solid fa-boxes-stacked" onclick="window.location.href='./estoque.php'"></i>
                 <a href="./estoque.php">Estoque</a>
             </li>
             <li class="op-itens">
-                <i class="fa-solid fa-file-pen"></i>
-                <a href="">Gerenciamento</a>
+                <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
+                <a href="./gerenciamento.php">Gerenciamento</a>
             </li>
         </ul>
     </div>

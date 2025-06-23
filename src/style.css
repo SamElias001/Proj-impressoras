@@ -5,8 +5,8 @@
 
 .tray {
     position: fixed;
-    top: 70px; /* ajuste conforme altura do profile */
-    left: 20px;
+    bottom: 10vh;
+    left: 1vw;
     width: 220px;
     background-color: rgb(65, 65, 65);
     border: 2px solid black;
@@ -14,7 +14,7 @@
     z-index: 1000;
     display: none;
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    padding: 1rem 0.5rem;
+    padding: 0rem 0.5rem 1rem;
 }
 
 .profile {
@@ -24,6 +24,8 @@
     align-items: center;
     gap: 1vh;
     position: fixed;
+    bottom: 2vh;
+    margin-left: 1vw;
 }
 
 .profile-img {

@@ -50,7 +50,6 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 <body style="background-color: gray; display: flex;">
     <div class="profile">
         <div class="profile-img" onclick="toggleTray()"></div>
-        <div class="profile-name">Convidado</div>
     </div>
 
     <div class="tray" id="trayMenu">

@@ -34,6 +34,20 @@ VALUES ('ZDEJB07M646436P', 'Elz_M - Enferm', 'Samsung', '2025-06-04', 'Troca de 
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
 VALUES ('ZDDPB07M415MZPR', 'Serviço Social', 'Samsung', '2025-06-05', 'Usuario do Scanner', '', 'Feito', 'Sim');
 
+-- Inserir as peças na tabela pecas
+INSERT INTO pecas (nome_peca, marca_peca, descricao_peca)
+VALUES ('Fusor', 'Samsung', NULL);
+
+INSERT INTO pecas (nome_peca, marca_peca, descricao_peca)
+VALUES ('Fusor', 'HP', NULL);
+
+-- Inserir no estoque (assumindo que os IDs das peças inseridas acima são 1 e 2)
+INSERT INTO estoque (id_peca, quantidade)
+VALUES (1, 1);
+
+INSERT INTO estoque (id_peca, quantidade)
+VALUES (2, 1);
+
 -- Alterar banco antigo
 ALTER TABLE impressoras
 MODIFY COLUMN marca ENUM('Samsung', 'HP', 'Epson') NOT NULL;
