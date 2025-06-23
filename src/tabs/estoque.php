@@ -14,30 +14,24 @@
 </head>
 
 <body style="background-color: gray; display: flex;">
-    <div class="tray">
-        <div class="profile">
-            <div class="profile-img" onclick=""></div>
-            <div class="profile-name">Convidado</div>
-        </div>
+    <div class="profile">
+        <div class="profile-img" onclick="toggleTray()"></div>
+        <div class="profile-name">Convidado</div>
+    </div>
 
+    <div class="tray" id="trayMenu">
         <ul class="list">
             <li class="op-itens">
                 <i class="fa-solid fa-print" onclick="window.location.href='./impressoras.php'"></i>
-                <a href="./impressoras.php">
-                    Impressoras
-                </a>
+                <a href="./impressoras.php">Impressoras</a>
             </li>
             <li class="op-itens">
-                <i class="fa-solid fa-boxes-stacked"></i>
-                <a href="">
-                    Estoque
-                </a>
+                <i class="fa-solid fa-boxes-stacked" onclick="window.location.href='./estoque.php'"></i>
+                <a href="./estoque.php">Estoque</a>
             </li>
             <li class="op-itens">
-                <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
-                <a href="./gerenciamento.php">
-                    Gerenciamento
-                </a>
+                <i class="fa-solid fa-file-pen"></i>
+                <a href="">Gerenciamento</a>
             </li>
         </ul>
     </div>
@@ -53,13 +47,28 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <?php
+                require("../classeimpressora.php");
+
+                $estoque = new Estoque();
+                $listaEstoque = $estoque->listarEstoque();
+
+                foreach ($listaEstoque as $registro) {
+                    $nome_peca = $registro['nome_peca'];
+                    $marca_peca = $registro['marca_peca'];
+                    $quantidade = $registro['quantidade'];
+
+                    $necessidade = ($quantidade < 10) ? "<span style='color:red;'>Necessita de mais</span>" : "<span style='color:green;'>OK</span>";
+
+                    echo "<tr>";
+                    echo "<td>$nome_peca</td>";
+                    echo "<td>$marca_peca</td>";
+                    echo "<td>$quantidade</td>";
+                    echo "<td>$necessidade</td>";
+                    echo "</tr>";
+                }
+                ?>
             </tbody>
-            <?php
-            require("../classeimpressora.php");
-            
-            
-            ?>
         </table> 
     </div>
 

@@ -43,5 +43,10 @@ MODIFY COLUMN ultima_manutencao DATE NOT NULL DEFAULT '2025-06-23',
 MODIFY COLUMN problema VARCHAR(255) NOT NULL DEFAULT 'Nenhuma',
 MODIFY COLUMN peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma';
 
+ALTER TABLE pecas
+CHANGE COLUMN nome nome_peca VARCHAR(100) NOT NULL,
+CHANGE COLUMN marca marca_peca ENUM('Samsung', 'HP') NOT NULL,
+CHANGE COLUMN descricao descricao_peca TEXT;
+
 -- UTF-8
 ALTER TABLE impressoras CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

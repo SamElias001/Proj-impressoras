@@ -4,14 +4,17 @@
 }
 
 .tray {
+    position: fixed;
+    top: 70px; /* ajuste conforme altura do profile */
+    left: 20px;
+    width: 220px;
     background-color: rgb(65, 65, 65);
-    display: flex;
-    flex-direction: column;
-    height: 98vh;
-    width: 10%;
-    align-items: center;
-    padding-top: 2vh;
-    border-right: 2px solid black;
+    border: 2px solid black;
+    border-radius: 12px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    padding: 1rem 0.5rem;
 }
 
 .profile {
@@ -20,6 +23,7 @@
     justify-items: center;
     align-items: center;
     gap: 1vh;
+    position: fixed;
 }
 
 .profile-img {
