@@ -25,28 +25,6 @@ if (isset($_GET['id_imp'])) {
         $dados = $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
-
-// Atualiza se veio por POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id_imp = $_POST['id_imp'];
-    $numero_de_serie = $_POST['serial'];
-    $setor = $_POST['setor'];
-    $marca = $_POST['marca'];
-    $ultima_manutencao = $_POST['ultima_manutencao'];
-    $problema = $_POST['servico'];
-    $peca_utilizada = $_POST['peca'];
-    $status_de_conclusao = $_POST['status'];
-    $rede = $_POST['rede'];
-
-    $ok = $impressora->alterarImpressora($id_imp, $numero_de_serie, $setor, $marca, $ultima_manutencao, $problema, $peca_utilizada, $status_de_conclusao, $rede);
-
-    if ($ok) {
-        echo "<script>alert('Impressora atualizada com sucesso!');window.location.href='edicao.php?id_imp=$id_imp';</script>";
-        exit;
-    } else {
-        echo "<script>alert('Erro ao atualizar impressora!');</script>";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

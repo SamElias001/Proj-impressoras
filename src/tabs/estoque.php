@@ -57,7 +57,8 @@
             </tbody>
             <?php
             require("../classeimpressora.php");
-
+            
+            
             ?>
         </table> 
     </div>
