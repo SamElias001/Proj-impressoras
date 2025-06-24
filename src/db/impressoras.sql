@@ -1,6 +1,8 @@
 -- Apenas estrutura do banco de dados para o sistema de impressoras
 -- Banco de dados em Xampp
 
+CREATE DATABASE proj_impressoras;
+
 CREATE TABLE impressoras (
     id_imp INT AUTO_INCREMENT PRIMARY KEY,
     numero_de_serie VARCHAR(50) NOT NULL UNIQUE,

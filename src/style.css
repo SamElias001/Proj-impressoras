@@ -205,12 +205,20 @@
     padding: 2rem;
 }
 
+.subArea {
+    border: 3px solid black;
+}
+
 #areaImpressoras {
     display: none;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #areaEstoque {
     display: none;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #gerenciamentoImpressoras {

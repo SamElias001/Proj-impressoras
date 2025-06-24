@@ -46,7 +46,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
         <!-- Área Impressoras -->
         <div class="area-gerenciamento" id="areaImpressoras">
             <div id="gerenciamentoImpressoras">
-                <h2>Gerenciamento de Impressoras</h2>
+                <h2 style="text-align: center;">Gerenciamento de Impressoras</h2>
 
                 <div style="width: 100%; display: flex; justify-content: center; gap: 2rem;">
                     <button class="btn-switch" id="btnRelatorioImpressoras"
@@ -60,7 +60,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </div>
             </div>
 
-            <div id="relatarioImpressoras">
+            <div id="relatarioImpressoras" class="subArea">
                 <h3>Relatório de Nova Impressora</h3>
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="inserir">
@@ -85,7 +85,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="relatarioManutencao">
+            <div id="relatarioManutencao" class="subArea">
                 <h3>Relatório de Manutenção</h3>
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="atualizar">
@@ -109,7 +109,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="consultarImpressora">
+            <div id="consultarImpressora" class="subArea">
                 <h3>Consultar Impressora</h3>
                 <form action="../acao_impressora.php" method="get">
                     <input type="hidden" name="acao" value="consultar">
@@ -121,7 +121,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="alterarExcluirImpressora">
+            <div id="alterarExcluirImpressora" class="subArea">
                 <h3>Alterar ou Excluir Impressora</h3>
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="alterar_ou_excluir">
@@ -138,20 +138,16 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
         <!-- Área Estoque -->
         <div class="area-gerenciamento" id="areaEstoque">
             <div class="gestaoEstoque">
-                <h2>Gestão de Estoque</h2>
+                <h2 style="text-align: center;">Gestão de Estoque</h2>
                 <div style="width: 100%; display: flex; justify-content: center; gap: 2rem;">
-                    <button class="btn-switch" id="btnRelatorioPeca" onclick="showArea('relatorioPeca')">Relatório
-                        deNova Peça</button>
-                    <button class="btn-switch" id="btnPecaUsada" onclick="showArea('pecaUsada')">Relatório
-                        dePeçaUsada</button>
-                    <button class="btn-switch" id="btnConsultarPeca"
-                        onclick="showArea('consultarPeca')">ConsultarPeça</button>
-                    <button class="btn-switch" id="btnAlterarExcluirPeca"
-                        onclick="showArea('alterarExcluirPeca')">Alterarou Excluir Peça</button>
+                    <button class="btn-switch" id="btnRelatorioPeca" onclick="showArea('relatorioPeca')">Relatório de Nova Peça</button>
+                    <button class="btn-switch" id="btnPecaUsada" onclick="showArea('pecaUsada')">Relatório de Peça Usada</button>
+                    <button class="btn-switch" id="btnConsultarPeca"onclick="showArea('consultarPeca')">Consultar Peça</button>
+                    <button class="btn-switch" id="btnAlterarExcluirPeca"onclick="showArea('alterarExcluirPeca')">Alterarou Excluir Peça</button>
                 </div>
             </div>
 
-            <div id="relatorioPeca">
+            <div id="relatorioPeca" class="subArea">
                 <h3>Relatório de Nova Peça</h3>
                 <form action="../acao_estoque.php" method="post">
                     <input type="hidden" name="acao" value="inserir_peca">
@@ -171,7 +167,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="relatorioPecaUsada">
+            <div id="relatorioPecaUsada" class="subArea">
                 <h3>Relatório de Peça Usada</h3>
                 <form action="../acao_estoque.php" method="post">
                     <input type="hidden" name="acao" value="usar_peca">
@@ -185,7 +181,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="consultarPeca">
+            <div id="consultarPeca" class="subArea">
                 <h3>Consultar Peça</h3>
                 <form action="../acao_estoque.php" method="get">
                     <input type="hidden" name="acao" value="consultar">
@@ -197,7 +193,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 </form>
             </div>
 
-            <div id="alterarExcluirPeca">
+            <div id="alterarExcluirPeca" class="subArea">
                 <h3>Alterar ou Excluir Peça</h3>
                 <form action="../acao_estoque.php" method="post">
                     <input type="hidden" name="acao" value="alterar_ou_excluir">

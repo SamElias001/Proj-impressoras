@@ -2,31 +2,85 @@ document.getElementById('serial').addEventListener('input', function(e) {
     e.target.value = e.target.value.toUpperCase();
 });
 
-function toggleTray() {
-    const tray = document.getElementById('trayMenu');
-    tray.style.display = (tray.style.display === 'block') ? 'none' : 'block';
-}
-
-// Fecha o tray ao clicar fora dele
-document.addEventListener('click', function(event) {
-    const tray = document.getElementById('trayMenu');
-    const profileImg = document.querySelector('.profile-img');
-    if (!tray.contains(event.target) && !profileImg.contains(event.target)) {
-        tray.style.display = 'none';
-    }
-});
-
 function showArea(area) { 
-    const aImp = document.getElementById('areaImpressoras');
-    const aEst = document.getElementById('areaEstoque');
+    const areaImp = document.getElementById('areaImpressoras');
+    const areaEst = document.getElementById('areaEstoque');
 
     if (area === 'impressoras') {
-        aImp.style.display = 'flex';
-        aEst.style.display = 'none';
+        areaImp.style.display = 'flex';
+        areaEst.style.display = 'none';
     } 
     if (area === 'estoque') {
-        aEst.style.display = 'flex';
-        aImp.style.display = 'none';
+        areaEst.style.display = 'flex';
+        areaImp.style.display = 'none';
+    }
+
+    // Dentro da área de impressoras
+    const subAreaRelatorioImpressoras = document.getElementById('relatarioImpressoras');
+    const subAreaRelatorioManutencao = document.getElementById('relatarioManutencao');
+    const subAreaConsultarImpressoras = document.getElementById('consultarImpressora');
+    const subAreaAlterarImpressora = document.getElementById('alterarExcluirImpressora');
+
+    if (area === 'relatorioImpressoras') {
+        subAreaRelatorioImpressoras.style.display = 'flex';
+        subAreaRelatorioManutencao.style.display = 'none';
+        subAreaConsultarImpressoras.style.display = 'none';
+        subAreaAlterarImpressora.style.display = 'none';
+    }
+
+    if (area === 'relatorioManutencao') {
+        subAreaRelatorioImpressoras.style.display = 'none';
+        subAreaRelatorioManutencao.style.display = 'flex';
+        subAreaConsultarImpressoras.style.display = 'none';
+        subAreaAlterarImpressora.style.display = 'none';
+    }
+
+    if (area === 'consultarImpressora'){
+        subAreaRelatorioImpressoras.style.display = 'none';
+        subAreaRelatorioManutencao.style.display = 'none';
+        subAreaConsultarImpressoras.style.display = 'flex';
+        subAreaAlterarImpressora.style.display = 'none';
+    }
+
+    if (area === 'alterarExcluirImpressora') {
+        subAreaRelatorioImpressoras.style.display = 'none';
+        subAreaRelatorioManutencao.style.display = 'none';
+        subAreaConsultarImpressoras.style.display = 'none';
+        subAreaAlterarImpressora.style.display = 'flex';
+    }
+
+    // Dentro da área de estoque
+    const subAreaRelatorioPeca = document.getElementById('relatorioPeca');
+    const subAreaRelatorioPecaUsada = document.getElementById('relatorioPecaUsada');
+    const subAreaConsultarPeca = document.getElementById('consultarPeca');
+    const subAreaAlterarExcluirPeca = document.getElementById('alterarExcluirPeca');
+
+    if (area === 'relatorioPeca') {
+        subAreaRelatorioPeca.style.display = 'flex';
+        subAreaRelatorioPecaUsada.style.display = 'none';
+        subAreaConsultarPeca.style.display = 'none';
+        subAreaAlterarExcluirPeca.style.display = 'none';
+    }
+    
+    if (area === 'pecaUsada') {
+        subAreaRelatorioPeca.style.display = 'none';
+        subAreaRelatorioPecaUsada.style.display = 'flex';
+        subAreaConsultarPeca.style.display = 'none';
+        subAreaAlterarExcluirPeca.style.display = 'none';
+    }
+
+    if (area === 'consultarPeca') {
+        subAreaRelatorioPeca.style.display = 'none';
+        subAreaRelatorioPecaUsada.style.display = 'none';
+        subAreaConsultarPeca.style.display = 'flex';
+        subAreaAlterarExcluirPeca.style.display = 'none';
+    }
+
+    if (area === 'alterarExcluirPeca') {
+        subAreaRelatorioPeca.style.display = 'none';
+        subAreaRelatorioPecaUsada.style.display = 'none';
+        subAreaConsultarPeca.style.display = 'none';
+        subAreaAlterarExcluirPeca.style.display = 'flex';
     }
 }
 
@@ -35,6 +89,8 @@ function toggleTray() {
     const tray = document.getElementById('trayMenu');
         tray.style.display = (tray.style.display === 'block') ? 'none' : 'block';
 }
+
+// Fecha o tray ao clicar fora dele
 document.addEventListener('click', function(event) {
     const tray = document.getElementById('trayMenu');
     const profileImg = document.querySelector('.profile-img');
