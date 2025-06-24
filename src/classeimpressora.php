@@ -111,6 +111,45 @@ class Impressoras
         }
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function consultarImpressorasAvancado($filtros = []) {
+        require("conexaobd.php");
+        $comando = "SELECT * FROM impressoras WHERE 1=1";
+        $params = [];
+
+        if (!empty($filtros['id_imp'])) {
+            $comando .= " AND id_imp = :id_imp";
+            $params[':id_imp'] = $filtros['id_imp'];
+        }
+        if (!empty($filtros['numero_de_serie'])) {
+            $comando .= " AND numero_de_serie = :numero_de_serie";
+            $params[':numero_de_serie'] = $filtros['numero_de_serie'];
+        }
+        if (!empty($filtros['setor'])) {
+            $comando .= " AND setor = :setor";
+            $params[':setor'] = $filtros['setor'];
+        }
+        if (!empty($filtros['marca'])) {
+            $comando .= " AND marca = :marca";
+            $params[':marca'] = $filtros['marca'];
+        }
+        if (!empty($filtros['ultima_manutencao'])) {
+            $comando .= " AND ultima_manutencao = :ultima_manutencao";
+            $params[':ultima_manutencao'] = $filtros['ultima_manutencao'];
+        }
+        if (!empty($filtros['rede'])) {
+            $comando .= " AND rede = :rede";
+            $params[':rede'] = $filtros['rede'];
+    }
+
+    // Adicione outros filtros conforme necessário
+    $stmt = $pdo->prepare($comando);
+    foreach ($params as $key => $value) {
+        $stmt->bindValue($key, $value);
+    }
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }
 
 class Pecas
@@ -257,3 +296,52 @@ class Estoque
     }
 }
 ?>
+
+// Necessita ajustes
+
+public function consultarImpressorasAvancado($filtros = []) {
+    require("conexaobd.php");
+    $comando = "SELECT * FROM impressoras WHERE 1=1";
+    $params = [];
+
+    if (!empty($filtros['id_imp'])) {
+        $comando .= " AND id_imp = :id_imp";
+        $params[':id_imp'] = $filtros['id_imp'];
+    }
+    if (!empty($filtros['numero_de_serie'])) {
+        $comando .= " AND numero_de_serie = :numero_de_serie";
+        $params[':numero_de_serie'] = $filtros['numero_de_serie'];
+    }
+    if (!empty($filtros['setor'])) {
+        $comando .= " AND setor = :setor";
+        $params[':setor'] = $filtros['setor'];
+    }
+    if (!empty($filtros['marca'])) {
+        $comando .= " AND marca = :marca";
+        $params[':marca'] = $filtros['marca'];
+    }
+    if (!empty($filtros['ultima_manutencao'])) {
+        $comando .= " AND ultima_manutencao = :ultima_manutencao";
+        $params[':ultima_manutencao'] = $filtros['ultima_manutencao'];
+    }
+    if (!empty($filtros['rede'])) {
+        $comando .= " AND rede = :rede";
+        $params[':rede'] = $filtros['rede'];
+    }
+    // Adicione outros filtros conforme necessário
+
+    $stmt = $pdo->prepare($comando);
+    foreach ($params as $key => $value) {
+        $stmt->bindValue($key, $value);
+    }
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Exemplo de uso:
+$filtros = [
+    'setor' => 'Elz_M - Enferm',
+    'rede' => 'Sim',
+    'marca' => 'Samsung'
+];
+$resultado = $impressora->consultarImpressorasAvancado($filtros);

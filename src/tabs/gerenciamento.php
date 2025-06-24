@@ -75,6 +75,18 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                             <option value="HP">HP</option>
                             <option value="Epson">Epson</option>
                         </select>
+                        <label>Ultima Manutenção:</label>
+                        <input type="date" name="ultima_manutencao" required>
+                        <label>Problema:</label>
+                        <input type="text" name="problema" required>
+                        <label>Peça Utilizada:</label>
+                        <input type="text" name="peca_utilizada">
+                        <label>Status de Conclusão:</label>
+                        <select name="status_de_conclusao" required>
+                            <option value="Pendente">Pendente</option>
+                            <option value="Em andamento">Em andamento</option>
+                            <option value="Feito">Feito</option>
+                        </select>
                         <label>Rede:</label>
                         <select name="rede" required>
                             <option value="Sim">Rede</option>
@@ -90,8 +102,8 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="atualizar">
                     <div class="form-group">
-                        <label>ID Impressora:</label>
-                        <input type="number" name="id_imp" required>
+                        <label>Número de série da Impressora:</label>
+                        <input type="text" name="numero_de_serie" required>
                         <label>Última Manutenção:</label>
                         <input type="date" name="ultima_manutencao" required>
                         <label>Serviço:</label>

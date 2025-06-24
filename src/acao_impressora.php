@@ -12,10 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['numero_de_serie'],
             $_POST['setor'],
             $_POST['marca'],
-            date('Y-m-d'),
-            'Nenhuma',
-            'Nenhuma',
-            'Pendente',
+            $_POST['ultima_manutencao'],
+            $_POST['problema'],
+            $_POST['peca_utilizada'],
+            $_POST['status_de_conclusao'],
             $_POST['rede']
         );
         header("Location: gerenciamento.php?msg=Impressora cadastrada");
