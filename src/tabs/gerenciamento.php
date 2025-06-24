@@ -15,7 +15,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body style="background-color: gray; display: flex;">
+<body style="display: flex;">
     <div class="profile">
         <div class="profile-img" onclick="toggleTray()"></div>
     </div>
@@ -54,9 +54,9 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                     <button class="btn-switch" id="btnRelatorioManutencao"
                         onclick="showArea('relatorioManutencao')">Relatório de Manutenção</button>
                     <button class="btn-switch" id="btnConsultarImpressora"
-                        onclick="showArea('consultarImpressora')">Consultar Impressora</button>
+                        onclick="showArea('consultarImpressora')">Consultar Impressora [Em progresso]</button>
                     <button class="btn-switch" id="btnAlterarExcluirImpressora"
-                        onclick="showArea('alterarExcluirImpressora')">Alterar ou Excluir Impressora</button>
+                        onclick="showArea('alterarExcluirImpressora')">Alterar[Em progresso] ou Excluir Impressora</button>
                 </div>
             </div>
 
@@ -140,7 +140,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                     <div class="form-group">
                         <label>ID Impressora:</label>
                         <input type="number" name="id_imp" required>
-                        <button type="submit" name="alterar">Alterar</button>
+                        <button type="submit" name="alterar">Alterar [Em progresso]</button>
                         <button type="submit" name="excluir">Excluir</button>
                     </div>
                 </form>
@@ -153,9 +153,9 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 <h2 style="text-align: center;">Gestão de Estoque</h2>
                 <div style="width: 100%; display: flex; justify-content: center; gap: 2rem;">
                     <button class="btn-switch" id="btnRelatorioPeca" onclick="showArea('relatorioPeca')">Relatório de Nova Peça</button>
-                    <button class="btn-switch" id="btnPecaUsada" onclick="showArea('pecaUsada')">Relatório de Peça Usada</button>
-                    <button class="btn-switch" id="btnConsultarPeca"onclick="showArea('consultarPeca')">Consultar Peça</button>
-                    <button class="btn-switch" id="btnAlterarExcluirPeca"onclick="showArea('alterarExcluirPeca')">Alterarou Excluir Peça</button>
+                    <button class="btn-switch" id="btnPecaUsada" onclick="showArea('pecaUsada')">Relatório de Peça Usada [Em progresso]</button>
+                    <button class="btn-switch" id="btnConsultarPeca"onclick="showArea('consultarPeca')">Consultar Peça [Em progresso]</button>
+                    <button class="btn-switch" id="btnAlterarExcluirPeca"onclick="showArea('alterarExcluirPeca')">Alterar ou Excluir Peça [Em progresso]</button>
                 </div>
             </div>
 
@@ -172,6 +172,8 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                             <option value="HP">HP</option>
                             <option value="Epson">Epson</option>
                         </select>
+                        <label>Quantidade:</label>
+                        <input type="number" name="quantidade" required>
                         <label>Descrição:</label>
                         <input type="text" name="descricao_peca">
                         <button type="submit">Cadastrar Peça</button>

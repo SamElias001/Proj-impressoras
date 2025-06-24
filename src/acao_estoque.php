@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $peca->inserirPeca(
             $_POST['nome_peca'],
             $_POST['marca_peca'],
-            $_POST['descricao_peca']
+            $_POST['descricao_peca'],
+            $_POST['quantidade']
         );
         header("Location: gerenciamento.php?msg=Peça cadastrada");
         exit;

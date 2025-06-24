@@ -13,7 +13,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body style="background-color: gray; display: flex;">
+<body style="display: flex;">
     <div class="tray">
         <div class="profile">
             <div class="profile-img" onclick=""></div>
@@ -41,7 +41,9 @@
         </ul>
     </div>
 
-    <div class="content" style="align-items: center; justify-content: center;">
+    <div class="content" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <h1>Projeto de banco de dados - Impressoras</h1>
+        <p style="margin-bottom: 1rem;">Desenvolvido por: <strong>Samuel Elias</strong></p>
         <div class="container container-index">
             <ul class="list list-index">
                 <li class="op-itens op-index">

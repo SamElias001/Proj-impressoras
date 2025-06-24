@@ -172,15 +172,28 @@ class Pecas
     public function setDescricaoPeca($descricao_peca) { $this->descricao_peca = $descricao_peca; }
 
     // Inserir peça
-    public function inserirPeca($nome_peca, $marca_peca, $descricao_peca) {
+    public function inserirPeca($nome_peca, $marca_peca, $descricao_peca, $quantidade) {
         require("conexaobd.php");
+        // 1. Insere a peça
         $comando = "INSERT INTO pecas (nome_peca, marca_peca, descricao_peca) VALUES (:nome_peca, :marca_peca, :descricao_peca);";
         $stmt = $pdo->prepare($comando);
         $stmt->bindParam(":nome_peca", $nome_peca);
         $stmt->bindParam(":marca_peca", $marca_peca);
         $stmt->bindParam(":descricao_peca", $descricao_peca);
         $stmt->execute();
-        return $stmt->rowCount() > 0;
+
+        if ($stmt->rowCount() > 0) {
+            // 2. Pega o id da peça inserida
+            $id_peca = $pdo->lastInsertId();
+            // 3. Insere no estoque
+            $comandoEstoque = "INSERT INTO estoque (id_peca, quantidade) VALUES (:id_peca, :quantidade);";
+            $stmtEstoque = $pdo->prepare($comandoEstoque);
+            $stmtEstoque->bindParam(":id_peca", $id_peca);
+            $stmtEstoque->bindParam(":quantidade", $quantidade);
+            $stmtEstoque->execute();
+            return $stmtEstoque->rowCount() > 0;
+        }
+        return false;
     }
 
     // Listar todas as peças
@@ -297,51 +310,3 @@ class Estoque
 }
 ?>
 
-// Necessita ajustes
-
-public function consultarImpressorasAvancado($filtros = []) {
-    require("conexaobd.php");
-    $comando = "SELECT * FROM impressoras WHERE 1=1";
-    $params = [];
-
-    if (!empty($filtros['id_imp'])) {
-        $comando .= " AND id_imp = :id_imp";
-        $params[':id_imp'] = $filtros['id_imp'];
-    }
-    if (!empty($filtros['numero_de_serie'])) {
-        $comando .= " AND numero_de_serie = :numero_de_serie";
-        $params[':numero_de_serie'] = $filtros['numero_de_serie'];
-    }
-    if (!empty($filtros['setor'])) {
-        $comando .= " AND setor = :setor";
-        $params[':setor'] = $filtros['setor'];
-    }
-    if (!empty($filtros['marca'])) {
-        $comando .= " AND marca = :marca";
-        $params[':marca'] = $filtros['marca'];
-    }
-    if (!empty($filtros['ultima_manutencao'])) {
-        $comando .= " AND ultima_manutencao = :ultima_manutencao";
-        $params[':ultima_manutencao'] = $filtros['ultima_manutencao'];
-    }
-    if (!empty($filtros['rede'])) {
-        $comando .= " AND rede = :rede";
-        $params[':rede'] = $filtros['rede'];
-    }
-    // Adicione outros filtros conforme necessário
-
-    $stmt = $pdo->prepare($comando);
-    foreach ($params as $key => $value) {
-        $stmt->bindValue($key, $value);
-    }
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-// Exemplo de uso:
-$filtros = [
-    'setor' => 'Elz_M - Enferm',
-    'rede' => 'Sim',
-    'marca' => 'Samsung'
-];
-$resultado = $impressora->consultarImpressorasAvancado($filtros);
