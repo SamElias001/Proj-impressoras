@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($acao === 'atualizar') {
         $impressora->alterarImpressora(
-            $_POST['id_imp'],
             null,
+            $_POST['numero_de_serie'],
             null,
             null,
             $_POST['ultima_manutencao'],
