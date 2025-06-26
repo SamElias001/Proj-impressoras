@@ -91,6 +91,7 @@ function toggleTray() {
 }
 
 // Fecha o tray ao clicar fora dele
+// Não está funcionando com os arquivos em Pendrive
 document.addEventListener('click', function(event) {
     const tray = document.getElementById('trayMenu');
     const profileImg = document.querySelector('.profile-img');
@@ -98,3 +99,25 @@ document.addEventListener('click', function(event) {
         tray.style.display = 'none';
     }
 });
+
+
+
+// Alterna entre mostrar rede e ipv4
+document.getElementById('btn-info-icon').addEventListener('click', function() {
+    const tds = document.querySelectorAll('.col-rede');
+    const showingRede = tds[0].textContent.trim() === tds[0].getAttribute('data-rede');
+    tds.forEach(td => {
+        td.textContent = showingRede ? td.getAttribute('data-ipv4') : td.getAttribute('data-rede');
+    });
+});
+
+// Mostrar a Observação
+function showObservacao() {
+    const observacao = document.getElementById('obs');
+
+    if (observacao.style.display === 'none') {
+        observacao.style.display = 'block';
+    } else {
+        observacao.style.display = 'none';
+    }
+}

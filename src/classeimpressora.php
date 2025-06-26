@@ -11,6 +11,9 @@ class Impressoras
     private $peca_utilizada;
     private $status_de_conclusao;
     private $rede;
+    private $contador_de_uso;
+    private $ipv4_impressora;
+    private $observacao;
 
     // GETs
     public function getIdImp() { return $this->id_imp; }
@@ -22,6 +25,9 @@ class Impressoras
     public function getPecaUtilizada() { return $this->peca_utilizada; }
     public function getStatusDeConclusao() { return $this->status_de_conclusao; }
     public function getRede() { return $this->rede; }
+    public function getContadorDeUso() { return $this->contador_de_uso; }
+    public function getIpv4Impressora() { return $this->ipv4_impressora; }
+    public function getObservacao() { return $this->observacao; }
 
     // SETs
     public function setIdImp($id_imp) { $this->id_imp = $id_imp; }
@@ -33,12 +39,15 @@ class Impressoras
     public function setPecaUtilizada($pecaUtilizada) { $this->peca_utilizada = $pecaUtilizada; }
     public function setStatusDeConclusao($status_de_conclusao) { $this->status_de_conclusao = $status_de_conclusao; }
     public function setRede($rede) { $this->rede = $rede; }
+    public function setContadorDeUso($contador_de_uso) { $this->contador_de_uso = $contador_de_uso; }
+    public function setIpv4Impressora($ipv4_impressora) { $this->ipv4_impressora = $ipv4_impressora; }
+    public function setObservacao($observacao) { $this->observacao = $observacao; }
 
     // Inserir impressora
-    public function inserirImpressora($id_imp, $numero_de_serie, $setor, $marca, $ultima_manutencao, $problema, $peca_utilizada, $status_de_conclusao, $rede) {
+    public function inserirImpressora($id_imp, $numero_de_serie, $setor, $marca, $ultima_manutencao, $problema, $peca_utilizada, $status_de_conclusao, $rede, $contador_de_uso, $ipv4_impressora, $observacao) {
         require("conexaobd.php");
-        $comando = "INSERT INTO impressoras (id_imp, numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede) 
-                    VALUES (:id_imp, :numero_de_serie, :setor, :marca, :ultima_manutencao, :problema, :peca_utilizada, :status_de_conclusao, :rede);";
+        $comando = "INSERT INTO impressoras (id_imp, numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede, contador_de_uso, ipv4_impressora, observacao) 
+                    VALUES (:id_imp, :numero_de_serie, :setor, :marca, :ultima_manutencao, :problema, :peca_utilizada, :status_de_conclusao, :rede, :contador_de_uso, :ipv4_impressora, :observacao);";
         $stmt = $pdo->prepare($comando);
         $stmt->bindParam(":id_imp", $id_imp);
         $stmt->bindParam(":numero_de_serie", $numero_de_serie);
@@ -49,14 +58,17 @@ class Impressoras
         $stmt->bindParam(":peca_utilizada", $peca_utilizada);
         $stmt->bindParam(":status_de_conclusao", $status_de_conclusao);
         $stmt->bindParam(":rede", $rede);
+        $stmt->bindParam(":contador_de_uso", $contador_de_uso);
+        $stmt->bindParam(":ipv4_impressora", $ipv4_impressora);
+        $stmt->bindParam(":observacao", $observacao);
         $stmt->execute();
         return $stmt->rowCount() > 0;
     }
 
     // Alterar impressora
-    public function alterarImpressora($id_imp, $numero_de_serie, $setor, $marca, $ultima_manutencao, $problema, $peca_utilizada, $status_de_conclusao, $rede) {
+    public function alterarImpressora($id_imp, $numero_de_serie, $setor, $marca, $ultima_manutencao, $problema, $peca_utilizada, $status_de_conclusao, $rede, $contador_de_uso, $ipv4_impressora, $observacao) {
         require("conexaobd.php");
-        $comando = "UPDATE impressoras SET numero_de_serie=:numero_de_serie, setor=:setor, marca=:marca, ultima_manutencao=:ultima_manutencao, problema=:problema, peca_utilizada=:peca_utilizada, status_de_conclusao=:status_de_conclusao, rede=:rede WHERE id_imp=:id_imp;";
+        $comando = "UPDATE impressoras SET numero_de_serie=:numero_de_serie, setor=:setor, marca=:marca, ultima_manutencao=:ultima_manutencao, problema=:problema, peca_utilizada=:peca_utilizada, status_de_conclusao=:status_de_conclusao, rede=:rede, contador_de_uso=:contador_de_uso, ipv4_impressora=:ipv4_impressora, observacao=:observacao WHERE id_imp=:id_imp;";
         $stmt = $pdo->prepare($comando);
         $stmt->bindParam(":id_imp", $id_imp);
         $stmt->bindParam(":numero_de_serie", $numero_de_serie);
@@ -67,6 +79,9 @@ class Impressoras
         $stmt->bindParam(":peca_utilizada", $peca_utilizada);
         $stmt->bindParam(":status_de_conclusao", $status_de_conclusao);
         $stmt->bindParam(":rede", $rede);
+        $stmt->bindParam(":contador_de_uso", $contador_de_uso);
+        $stmt->bindParam(":ipv4_impressora", $ipv4_impressora);
+        $stmt->bindParam(":observacao", $observacao);
         $stmt->execute();
         return $stmt->rowCount() == 1;
     }

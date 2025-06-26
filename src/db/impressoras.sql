@@ -1,6 +1,12 @@
 -- Apenas estrutura do banco de dados para o sistema de impressoras
 -- Banco de dados em Xampp
 
+
+
+
+
+
+
 CREATE DATABASE proj_impressoras;
 
 CREATE TABLE impressoras (
@@ -12,7 +18,10 @@ CREATE TABLE impressoras (
     problema TEXT NOT NULL DEFAULT 'Nenhum',
     peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma',
     status_de_conclusao ENUM('Pendente', 'Em andamento', 'Feito') NOT NULL DEFAULT 'Pendente',
-    rede ENUM('Sim', 'Não') NOT NULL
+    rede ENUM('Sim', 'Não') NOT NULL,
+    contador_de_uso INT NOT NULL DEFAULT 0,
+    ipv4_impressora VARCHAR(15) NOT NULL DEFAULT '0.0.0.0',
+    observacao TEXT
 );
 
 CREATE TABLE pecas (
@@ -28,6 +37,23 @@ CREATE TABLE estoque (
     quantidade INT NOT NULL DEFAULT 0,
     FOREIGN KEY (id_peca) REFERENCES pecas(id_peca)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- Preset
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)

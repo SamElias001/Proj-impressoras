@@ -41,13 +41,15 @@
                 <tr>
                     <th>#</th>
                     <th>Número de Série</th>
+                    <th>Obs</th>
                     <th>Setor</th>
                     <th>Marca</th>
                     <th>Última Manutenção</th>
                     <th>Serviço</th>
                     <th>Peça</th>
                     <th>Status</th>
-                    <th>Rede</th> 
+                    <th>Contador de Uso</th>
+                    <th>Redes <button type="button" class="info-icon" id="btn-info-icon" title="Tipo de Conexão">IPv4</button></th>
                 </tr>
             </thead>
             <tbody>
@@ -68,24 +70,33 @@
                 $problema = $registro['problema'];
                 $peca_utilizada = $registro['peca_utilizada'];
                 $status_de_conclusao = $registro['status_de_conclusao'];
+                $contador_de_uso = $registro['contador_de_uso'];
                 $rede = $registro['rede'];
+                $ipv4_impressora = $registro['ipv4_impressora'];
+                $observacao = $registro['observacao'];
 
                 echo "<tr>";
                 echo "<td>$id_imp</td>";
                 echo "<td>$numero_de_serie</td>";
+                echo "<td>
+                <div class='obs-container' onclick='showObservacao()'>
+                <i class='fa-solid fa-circle-info'></i>
+                <span class='obervacao' id='obs'>$observacao</span>
+                </div>
+                </td>";
                 echo "<td>$setor</td>";
                 echo "<td>$marca</td>";
                 echo "<td>$ultima_manutencao</td>";
                 echo "<td>$problema</td>";
                 echo "<td>$peca_utilizada</td>";
                 echo "<td>$status_de_conclusao</td>";
-                echo "<td>$rede</td>";
+                echo "<td>$contador_de_uso</td>";
+                echo "<td class='col-rede' data-rede='$rede' data-ipv4='$ipv4_impressora'>$rede</td>";
                 echo "</tr>";
             }
             ?>
         </table> 
     </div>
-
     <script src="../script.js"></script>
 </body>
 </html>

@@ -50,20 +50,16 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 
                 <div style="width: 100%; display: flex; justify-content: center; gap: 2rem;">
                     <button class="btn-switch" id="btnRelatorioImpressoras"
-                        onclick="showArea('relatorioImpressoras')">Relatório de Impressoras</button>
-                    <button class="btn-switch" id="btnRelatorioManutencao"
-                        onclick="showArea('relatorioManutencao')">Relatório de Manutenção</button>
+                        onclick="showArea('relatorioImpressoras')">Relatório</button>
                     <button class="btn-switch" id="btnConsultarImpressora"
                         onclick="showArea('consultarImpressora')">Consultar Impressora [Em progresso]</button>
-                    <button class="btn-switch" id="btnAlterarExcluirImpressora"
-                        onclick="showArea('alterarExcluirImpressora')">Alterar[Em progresso] ou Excluir Impressora</button>
                 </div>
             </div>
 
             <div id="relatarioImpressoras" class="subArea">
-                <h3>Relatório de Nova Impressora</h3>
+                <h3>Relatório</h3>
                 <form action="../acao_impressora.php" method="post">
-                    <input type="hidden" name="acao" value="inserir">
+                    <input type="hidden" name="acao" value="inserir"> <!-- Alterar value -->
                     <div class="form-group">
                         <label>Número de Série:</label>
                         <input type="text" name="numero_de_serie" required>
@@ -92,6 +88,13 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                             <option value="Sim">Rede</option>
                             <option value="Não">USB</option>
                         </select>
+                        <label>Contador de Uso:</label>
+                        <input type="number" name="contador_de_uso">
+                        <label>IPv4 da Impressora:</label>
+                        <input type="text" name="ipv4_impressora">
+                        <label>Observação:</label>
+                        <textarea name="observacao"></textarea>
+
                         <button type="submit">Cadastrar Impressora</button>
                     </div>
                 </form>

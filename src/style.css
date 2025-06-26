@@ -364,3 +364,18 @@ body {
 #alterarExcluirPeca {
     display: none;
 }
+
+.info-icon {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.obervacao {
+    display: none;
+    position: fixed;
+    border: 2px solid var(--border);
+    background-color: var(--primary);
+    
+}
