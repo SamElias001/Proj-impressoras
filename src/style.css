@@ -372,10 +372,41 @@ body {
     cursor: pointer;
 }
 
-.obervacao {
+.observacao {
     display: none;
     position: fixed;
-    border: 2px solid var(--border);
-    background-color: var(--primary);
-    
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    max-width: 90vw;
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    z-index: 2000;
+    color: var(--primary);
+    font-size: 1.1rem;
+    text-align: left;
+    word-break: break-word;
+}
+
+.observacao.mostrar {
+    display: block;
+}
+
+.observacao-fechar {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--accent);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.observacao-fechar:hover {
+    color: var(--danger);
 }

@@ -53,8 +53,6 @@
                 </tr>
             </thead>
             <tbody>
-                
-            </tbody>
             <?php
             require("../classeimpressora.php");
 
@@ -79,9 +77,8 @@
                 echo "<td>$id_imp</td>";
                 echo "<td>$numero_de_serie</td>";
                 echo "<td>
-                <div class='obs-container' onclick='showObservacao()'>
-                <i class='fa-solid fa-circle-info'></i>
-                <span class='obervacao' id='obs'>$observacao</span>
+                <div class='obs-container'>
+                    <i class='fa-solid fa-circle-info' style='cursor:pointer;' onclick=\"showObservacao('".htmlspecialchars($observacao, ENT_QUOTES)."')\"></i>
                 </div>
                 </td>";
                 echo "<td>$setor</td>";
@@ -95,7 +92,12 @@
                 echo "</tr>";
             }
             ?>
+            </tbody>
         </table> 
+    </div>
+    <div class="observacao" id="observacaoModal" style="display:none;">
+        <button class="observacao-fechar" onclick="fecharObservacao()">&times;</button>
+        <div id="observacaoConteudo"></div>
     </div>
     <script src="../script.js"></script>
 </body>

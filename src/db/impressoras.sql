@@ -1,4 +1,6 @@
--- Apenas estrutura do banco de dados para o sistema de impressoras
+UPDATE impressoras
+SET observacao = 'Sua observação aqui'
+WHERE id_imp = 1;-- Apenas estrutura do banco de dados para o sistema de impressoras
 -- Banco de dados em Xampp
 
 
@@ -18,7 +20,7 @@ CREATE TABLE impressoras (
     problema TEXT NOT NULL DEFAULT 'Nenhum',
     peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma',
     status_de_conclusao ENUM('Pendente', 'Em andamento', 'Feito') NOT NULL DEFAULT 'Pendente',
-    rede ENUM('Sim', 'Não') NOT NULL,
+    rede ENUM('via Rede', 'Via USB') NOT NULL,
     contador_de_uso INT NOT NULL DEFAULT 0,
     ipv4_impressora VARCHAR(15) NOT NULL DEFAULT '0.0.0.0',
     observacao TEXT
@@ -56,6 +58,8 @@ CREATE TABLE estoque (
 
 
 -- Preset
+-- Criar mais exemplos de impressoras
+
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
 VALUES ('ZDEJB07M646436P', 'Elz_M - Enferm', 'Samsung', '2025-06-04', 'Troca de Toner', 'Toner', 'Feito', 'Sim');
 
@@ -68,6 +72,12 @@ VALUES ('Fusor', 'Samsung', NULL);
 
 INSERT INTO pecas (nome_peca, marca_peca, descricao_peca)
 VALUES ('Fusor', 'HP', NULL);
+
+-- Atualizar a observação de uma impressora específica (exemplo: id_imp = 1)
+-- (Certifique-se de substituir o id_imp pelo ID correto da impressora que deseja atualizar)
+UPDATE impressoras
+SET observacao = 'Teste de observação para a impressora, com textos grandes e complexos. Aqui está um exemplo de texto longo que pode ser usado para testar a exibição de observações na interface do usuário. Este texto é apenas um exemplo e pode ser substituído por qualquer outro texto que você desejar. A ideia é garantir que o sistema possa lidar com observações extensas sem problemas de formatação ou truncamento.'
+WHERE id_imp = 1;
 
 -- Inserir no estoque (assumindo que os IDs das peças inseridas acima são 1 e 2)
 INSERT INTO estoque (id_peca, quantidade)

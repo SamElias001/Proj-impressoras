@@ -111,13 +111,26 @@ document.getElementById('btn-info-icon').addEventListener('click', function() {
     });
 });
 
-// Mostrar a Observação
-function showObservacao() {
-    const observacao = document.getElementById('obs');
-
-    if (observacao.style.display === 'none') {
-        observacao.style.display = 'block';
+// Mostrar observação
+function showObservacao(texto) {
+    let observacaoAberta = false;
+    let ultimoTextoObs = "";
+    const modal = document.getElementById('observacaoModal');
+    const conteudo = document.getElementById('observacaoConteudo');
+    if (modal.style.display === 'block' && texto === ultimoTextoObs) {
+        modal.style.display = 'none';
+        observacaoAberta = false;
+        ultimoTextoObs = "";
     } else {
-        observacao.style.display = 'none';
+        conteudo.innerText = texto;
+        modal.style.display = 'block';
+        observacaoAberta = true;
+        ultimoTextoObs = texto;
     }
+}
+
+function fecharObservacao() {
+    document.getElementById('observacaoModal').style.display = 'none';
+    observacaoAberta = false;
+    ultimoTextoObs = "";
 }
