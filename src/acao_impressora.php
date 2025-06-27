@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['peca_utilizada'],
             $_POST['status_de_conclusao'],
             $_POST['rede']
+//colocar novas atribuições 
         );
         header("Location: gerenciamento.php?msg=Impressora cadastrada");
         exit;
