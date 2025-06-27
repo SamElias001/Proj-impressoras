@@ -7,9 +7,9 @@
 :root {
     --primary: #2d3e50;
     --secondary: #f5f6fa;
-    --accent: #4e8cff;
-    --accent-dark: #2563c9;
-    --danger: #e74c3c;
+    --accent: #ff804e;
+    --accent-dark: #c93e25;
+    --danger: #5c0b02;
     --success: #27ae60;
     --gray: #888;
     --light-gray: #e0e0e0;
@@ -149,6 +149,7 @@ body {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
+    border-collapse: collapse; /* Adicione esta linha */
 }
 
 .content table th {

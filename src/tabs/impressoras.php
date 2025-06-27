@@ -49,7 +49,7 @@
                     <th>Peça</th>
                     <th>Status</th>
                     <th>Contador de Uso</th>
-                    <th>Redes <button type="button" class="info-icon" id="btn-info-icon" title="Tipo de Conexão">IPv4</button></th>
+                    <th>Redes <button type="button" class="info-icon" id="btn-info-icon" title="Mostrar IPv4" onclick="toggleRedeIPv4()">IPv4</button></th>
                 </tr>
             </thead>
             <tbody>

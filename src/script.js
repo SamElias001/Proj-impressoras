@@ -103,13 +103,19 @@ document.addEventListener('click', function(event) {
 
 
 // Alterna entre mostrar rede e ipv4
-document.getElementById('btn-info-icon').addEventListener('click', function() {
+function toggleRedeIPv4() {
     const tds = document.querySelectorAll('.col-rede');
+    const btn = document.getElementById('btn-info-icon');
+    if (tds.length === 0 || !btn) return;
     const showingRede = tds[0].textContent.trim() === tds[0].getAttribute('data-rede');
+
     tds.forEach(td => {
         td.textContent = showingRede ? td.getAttribute('data-ipv4') : td.getAttribute('data-rede');
     });
-});
+
+    // Alterna o title do botão
+    btn.title = showingRede ? "Mostrar Rede" : "Mostrar IPv4";
+}
 
 // Mostrar observação
 function showObservacao(texto) {
