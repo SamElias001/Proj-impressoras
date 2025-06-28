@@ -14,8 +14,8 @@
 </head>
 
 <body style="display: flex;">
-    <div class="profile">
-        <div class="profile-img" onclick="toggleTray()"></div>
+    <div class="menu">
+        <div class="menu-img" onclick="toggleTray()"></div>
     </div>
 
     <div class="tray" id="trayMenu">
@@ -31,6 +31,10 @@
             <li class="op-itens">
                 <i class="fa-solid fa-file-pen" onclick="window.location.href='./gerenciamento.php'"></i>
                 <a href="./gerenciamento.php">Gerenciamento</a>
+            </li>
+            <li class="op-itens">
+                <i class="fa-solid fa-circle-half-stroke" onclick="toggleDarkMode()"></i>
+                <a onclick="toggleDarkMode()">Tema Escuro</a>
             </li>
         </ul>
     </div>

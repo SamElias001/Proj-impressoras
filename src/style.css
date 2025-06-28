@@ -14,11 +14,12 @@
     --gray: #888;
     --light-gray: #e0e0e0;
     --border: #bdbdbd;
+    --background: linear-gradient(135deg, #e0e7ef 0%, #b3c6e0 100%);
 }
 
 /* Fundo geral */
 body {
-    background: linear-gradient(135deg, #e0e7ef 0%, #b3c6e0 100%);
+    background: var(--background)
 }
 
 /* Tray */
@@ -51,7 +52,7 @@ body {
 .btn-switch.active,
 .btn-switch:hover {
     background: var(--accent);
-    color: #fff;
+    color: var(--secondary);
     border: 2px solid var(--accent-dark);
 }
 
@@ -59,14 +60,14 @@ body {
 .area-gerenciamento {
     margin-top: 2rem;
     width: 90%;
-    background: #fff;
+    background: var(--secondary);
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
     border: 1.5px solid var(--border);
 }
 
-.profile {
+.menu {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -77,7 +78,7 @@ body {
     margin-left: 1vw;
 }
 
-.profile-img {
+.menu-img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,10 +91,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
-}
-
-.profile-name {
-
 }
 
 .list {
@@ -145,7 +142,7 @@ body {
 
 .content table {
     border: 2px solid var(--accent);
-    background-color: #fafdff;
+    background-color: var(--secondary);
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -154,7 +151,7 @@ body {
 
 .content table th {
     background: var(--accent);
-    color: #fff;
+    color: var(--secondary);
     border-bottom: 2.5px solid var(--primary);
 }
 
@@ -215,7 +212,7 @@ body {
 .content-edit button {
     margin-top: 2vh;
     border-radius: 10px;
-    background-color: rgb(148, 148, 148);
+    background-color: var(--gray);
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -243,7 +240,7 @@ body {
     border-radius: 6px;
     border: 2px solid var(--border);
     padding-left: 0.3vw;
-    background: #fafdff;
+    background: var(--secondary);
     color: var(--primary);
     margin-bottom: 0.5rem;
     transition: border 0.2s;
@@ -268,13 +265,13 @@ body {
 .btn-switch.active,
 .btn-switch:hover {
     background: var(--accent);
-    color: #fff;
+    color: var(--secondary);
     border: 2px solid var(--accent-dark);
 }
 .area-gerenciamento {
     margin-top: 2rem;
     width: 90%;
-    background: #fff;
+    background: var(--secondary);
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
@@ -300,7 +297,7 @@ body {
     height: 5vh;
     border-radius: 10px;
     background-color: var(--accent);
-    color: #fff;
+    color: var(--secondary);
     font-weight: bold;
     cursor: pointer;
     border: none;
@@ -311,7 +308,29 @@ body {
 }
 
 .subArea form {
-    width: 30%;
+    display: flex;
+    width: 50%;
+    max-width: 100%; /* Garante que não ultrapasse o container pai */
+    box-sizing: border-box; /* Inclui padding e border na largura */
+    overflow-x: hidden; /* Adiciona barra de rolagem horizontal se necessário */
+    gap: 1rem; /* Espaço entre os itens, ajuste conforme necessário */
+    border: 2px solid black; 
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.subArea form input,
+.subArea form select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    background: var(--secondary);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    transition: border 0.2s;
 }
 
 #areaImpressoras {
@@ -381,7 +400,7 @@ body {
     transform: translateX(-50%);
     min-width: 300px;
     max-width: 90vw;
-    background: #fff;
+    background: var(--secondary);
     border: 2px solid var(--accent);
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);

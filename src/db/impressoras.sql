@@ -20,7 +20,7 @@ CREATE TABLE impressoras (
     problema TEXT NOT NULL DEFAULT 'Nenhum',
     peca_utilizada VARCHAR(50) NOT NULL DEFAULT 'Nenhuma',
     status_de_conclusao ENUM('Pendente', 'Em andamento', 'Feito') NOT NULL DEFAULT 'Pendente',
-    rede ENUM('via Rede', 'Via USB') NOT NULL,
+    rede ENUM('Rede', 'USB') NOT NULL,
     contador_de_uso INT NOT NULL DEFAULT 0,
     ipv4_impressora VARCHAR(15) NOT NULL DEFAULT '0.0.0.0',
     observacao TEXT
@@ -61,10 +61,10 @@ CREATE TABLE estoque (
 -- Criar mais exemplos de impressoras
 
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
-VALUES ('ZDEJB07M646436P', 'Elz_M - Enferm', 'Samsung', '2025-06-04', 'Troca de Toner', 'Toner', 'Feito', 'Sim');
+VALUES ('ZDEJB07M646436P', 'Elz_M - Enferm', 'Samsung', '2025-06-04', 'Troca de Toner', 'Toner', 'Feito', 'Rede');
 
 INSERT INTO impressoras (numero_de_serie, setor, marca, ultima_manutencao, problema, peca_utilizada, status_de_conclusao, rede)
-VALUES ('ZDDPB07M415MZPR', 'Serviço Social', 'Samsung', '2025-06-05', 'Usuario do Scanner', '', 'Feito', 'Sim');
+VALUES ('ZDDPB07M415MZPR', 'Servico Social', 'Samsung', '2025-06-05', 'Usuario do Scanner', '', 'Feito', 'Rede');
 
 -- Inserir as peças na tabela pecas
 INSERT INTO pecas (nome_peca, marca_peca, descricao_peca)

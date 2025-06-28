@@ -16,8 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['problema'],
             $_POST['peca_utilizada'],
             $_POST['status_de_conclusao'],
-            $_POST['rede']
-//colocar novas atribuições 
+            $_POST['rede'],
+            $_POST['contador_de_uso'],
+            $_POST['ipv4_impressora'],
+            $_POST['observacao']
         );
         header("Location: gerenciamento.php?msg=Impressora cadastrada");
         exit;
@@ -27,13 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $impressora->alterarImpressora(
             null,
             $_POST['numero_de_serie'],
-            null,
-            null,
+            $_POST['setor'],
+            $_POST['marca'],
             $_POST['ultima_manutencao'],
             $_POST['problema'],
             $_POST['peca_utilizada'],
             $_POST['status_de_conclusao'],
-            null
+            $_POST['rede'],
+            $_POST['contador_de_uso'],
+            $_POST['ipv4_impressora'],
+            $_POST['observacao']
         );
         header("Location: gerenciamento.php?msg=Manutenção atualizada");
         exit;

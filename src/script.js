@@ -140,3 +140,33 @@ function fecharObservacao() {
     observacaoAberta = false;
     ultimoTextoObs = "";
 }
+
+// Modo escuro PARA ONTEM
+function toggleDarkMode() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle('dark-mode');
+
+    if (isDark) {
+        root.style.setProperty('--primary', '#4f6781');
+        root.style.setProperty('--secondary', '#2d3e50');
+        root.style.setProperty('--accent', '#ff804e');
+        root.style.setProperty('--accent-dark', '#c93e25');
+        root.style.setProperty('--danger', '#ffb4a2');
+        root.style.setProperty('--success', '#27ae60');
+        root.style.setProperty('--gray', '#bbb');
+        root.style.setProperty('--light-gray', '#222');
+        root.style.setProperty('--border', '#444');
+        root.style.setProperty('--background', 'linear-gradient(135deg, #23272f 0%, #1a1d22 100%)');
+    } else {
+        root.style.setProperty('--primary', '#2d3e50');
+        root.style.setProperty('--secondary', '#f5f6fa');
+        root.style.setProperty('--accent', '#ff804e');
+        root.style.setProperty('--accent-dark', '#c93e25');
+        root.style.setProperty('--danger', '#5c0b02');
+        root.style.setProperty('--success', '#27ae60');
+        root.style.setProperty('--gray', '#888');
+        root.style.setProperty('--light-gray', '#e0e0e0');
+        root.style.setProperty('--border', '#bdbdbd');
+        root.style.setProperty('--background', 'linear-gradient(135deg, #e0e7ef 0%, #b3c6e0 100%)');
+    }
+}

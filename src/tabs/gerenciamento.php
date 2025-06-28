@@ -16,8 +16,8 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
 </head>
 
 <body style="display: flex;">
-    <div class="profile">
-        <div class="profile-img" onclick="toggleTray()"></div>
+    <div class="menu">
+        <div class="menu-img" onclick="toggleTray()"></div>
     </div>
 
     <div class="tray" id="trayMenu">
@@ -33,6 +33,10 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
             <li class="op-itens">
                 <i class="fa-solid fa-file-pen"></i>
                 <a href="">Gerenciamento</a>
+            </li>
+            <li class="op-itens">
+                <i class="fa-solid fa-circle-half-stroke" onclick="toggleDarkMode()"></i>
+                <a onclick="toggleDarkMode()">Tema Escuro</a>
             </li>
         </ul>
     </div>
@@ -60,7 +64,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 <h3>Relatório</h3>
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="inserir"> <!-- Alterar value -->
-                    <div class="form-group">
+                    <div class="form-group" style="height: 90vh;">
                         <label>Número de Série:</label>
                         <input type="text" name="numero_de_serie" required>
                         <label>Setor:</label>
@@ -85,8 +89,8 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                         </select>
                         <label>Rede:</label>
                         <select name="rede" required>
-                            <option value="Sim">Rede</option>
-                            <option value="Não">USB</option>
+                            <option value="Rede">Rede</option>
+                            <option value="USB">USB</option>
                         </select>
                         <label>Contador de Uso:</label>
                         <input type="number" name="contador_de_uso">
