@@ -232,6 +232,8 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
     height: 100%;
     width: 100%;
     gap: 5px;
@@ -283,7 +285,7 @@ body {
     border: 2px solid var(--accent);
     border-radius: 12px;
     background: var(--secondary);
-    height: 55vh;
+    height: 60vh;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -310,7 +312,7 @@ body {
 
 .subArea form {
     display: flex;
-    width: 50%;
+    width: 100%;
     max-width: 100%; /* Garante que não ultrapasse o container pai */
     box-sizing: border-box; /* Inclui padding e border na largura */
     overflow-x: hidden; /* Adiciona barra de rolagem horizontal se necessário */
@@ -334,7 +336,7 @@ body {
 
 .subArea form input,
 .subArea form select {
-    width: 100%;
+    width: 40%;
     min-width: 0;
     box-sizing: border-box;
     padding: 0.5rem;
