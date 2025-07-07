@@ -316,8 +316,20 @@ body {
     overflow-x: hidden; /* Adiciona barra de rolagem horizontal se necessário */
     gap: 1rem; /* Espaço entre os itens, ajuste conforme necessário */
     border: 2px solid black; 
-    border-radius: 20px;
+    border-radius: 2px;
     padding: 1rem;
+}
+
+.subArea form::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.subArea form::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 8px;
 }
 
 .subArea form input,

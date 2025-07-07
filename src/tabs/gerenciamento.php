@@ -64,7 +64,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                 <h3>Relatório</h3>
                 <form action="../acao_impressora.php" method="post">
                     <input type="hidden" name="acao" value="inserir"> <!-- Alterar value -->
-                    <div class="form-group" style="height: 90vh;">
+                    <div class="form-group">
                         <label>Número de Série:</label>
                         <input type="text" name="numero_de_serie" required>
                         <label>Setor:</label>
