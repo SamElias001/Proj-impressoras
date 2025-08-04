@@ -141,7 +141,7 @@ function fecharObservacao() {
     ultimoTextoObs = "";
 }
 
-// Modo escuro PARA ONTEM
+// Modo escuro
 function toggleDarkMode() {
     const root = document.documentElement;
     const isDark = root.classList.toggle('dark-mode');

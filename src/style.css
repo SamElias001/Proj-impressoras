@@ -234,9 +234,10 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
+    justify-content: center;
     height: 100%;
     width: 100%;
-    gap: 5px;
+    gap: 1vh;
 }
 
 .form-group input, select {
@@ -297,11 +298,12 @@ body {
 
 .subArea button {
     margin-top: 15px;
-    height: 2.5rem;
+    height: 5rem;
     border-radius: 10px;
     background-color: var(--accent);
     color: var(--secondary);
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
     border: none;
     transition: background 0.2s;
@@ -313,6 +315,7 @@ body {
 .subArea form {
     display: flex;
     align-content: space-around;
+    height:60vh;
     width: 100%;
     max-width: 100%; /* Garante que não ultrapasse o container pai */
     box-sizing: border-box; /* Inclui padding e border na largura */
@@ -347,7 +350,7 @@ body {
     border: 2px solid var(--border);
     background: var(--secondary);
     color: var(--tdcolor);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     transition: border 0.2s;
 }
 
