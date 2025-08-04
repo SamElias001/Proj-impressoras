@@ -297,7 +297,7 @@ body {
 
 .subArea button {
     margin-top: 15px;
-    height: 5vh;
+    height: 2.5rem;
     border-radius: 10px;
     background-color: var(--accent);
     color: var(--secondary);
@@ -312,6 +312,7 @@ body {
 
 .subArea form {
     display: flex;
+    align-content: space-around;
     width: 100%;
     max-width: 100%; /* Garante que não ultrapasse o container pai */
     box-sizing: border-box; /* Inclui padding e border na largura */
@@ -335,8 +336,10 @@ body {
 }
 
 .subArea form input,
-.subArea form select {
+.subArea form select,
+.subArea form textarea {
     width: 40%;
+    height: 2.1rem;
     min-width: 0;
     box-sizing: border-box;
     padding: 0.5rem;
@@ -344,7 +347,7 @@ body {
     border: 2px solid var(--border);
     background: var(--secondary);
     color: var(--tdcolor);
-    margin-bottom: 0.5rem;
+    margin-bottom: 3rem;
     transition: border 0.2s;
 }
 
